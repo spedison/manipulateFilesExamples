@@ -1,3 +1,9 @@
+# Ignore CTags
+./ctags
+# Data directory
+./data/*.csv
+./data/bweb_1t_SP_051020221321.csv
+
 # Compiled class file
 *.class
 
@@ -22,3 +28,5 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/.gradle/
+/.idea/

@@ -1,0 +1,79 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "gradle.plugin.com.github.johnrengelman:shadow:7.1.2"
+    }
+}
+
+plugins {
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+// Force use JDK 21 to use.
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// Compile with all options of JDK 21.
+compileJava {
+    options.release = 21
+}
+
+
+group = 'br.com.spedison'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation "org.apache.commons:commons-lang3:3.3.2"
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task minhaPrimeiraTask {
+    print 'Rodando minha primeira task'
+}
+
+// Define caracteristics of application, for exemple: mainClass used.
+application {
+    mainClass = "br.com.spedison.Main"
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'br.com.spedison.Main'
+    }
+}
+
+// Added example task to uncompresse ziped to test package.
+// To execute this in 2 steps.
+// ** 1) gradle distZip
+// ** 2) gradle unzip
+// ** 3) Go to buildDir/unpacked/unziped/
+// ** 4) In Linux
+//           ./<<project name-VERSION>>/bin/<<project name>>
+//       In Windows
+//           ./<<project name-VERSION>>/bin/<<project name>>.bat
+task unzip(type: Copy) {
+    def zipFile = file("${buildDir}/distributions/${project.name}-${version}.zip")
+    def outputDir = file("${buildDir}/unpacked/unziped")
+
+    from zipTree(zipFile)
+    into outputDir
+}
