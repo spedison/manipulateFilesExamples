@@ -1,9 +1,6 @@
 package br.com.spedison;
 
-import br.com.spedison.examples._01_OpenAndCloseFile_V1;
-import br.com.spedison.examples._02_OpenAndCloseFile_V2;
-import br.com.spedison.examples._03_CountLinesUsingBytes;
-import br.com.spedison.examples._04_CountLinesUsingLines;
+import br.com.spedison.examples.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,7 +18,10 @@ public class Main {
         _03_CountLinesUsingBytes.main(args);
 
         System.out.println("====>>> Count Lines using Tokens File _04_CountLinesUsingTokens");
-        _04_CountLinesUsingLines.main(args);
+        _04_CountLinesUsingLines_V1.main(args);
+        _04_CountLinesUsingLines_V2.main(args);
+        _04_CountLinesUsingLines_V3.main(args);
+        _04_CountLinesUsingLines_V4.main(args);
 
     }
 }
