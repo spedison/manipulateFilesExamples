@@ -2,10 +2,9 @@ package br.com.spedison.examples;
 
 import java.io.*;
 import java.util.NoSuchElementException;
-import java.util.Objects;
 import java.util.Scanner;
 
-public class _04_CountLinesUsingLines {
+public class _04_CountLinesUsingLines_V1 {
     public static void main(String[] args) {
 
         String fileName = args[0];
