@@ -63,6 +63,9 @@ public class _06_WorkingWithFilesOnLineAndOffLine {
                 map(Jogo::CriaJogo).
                 peek(jogo -> contaLinhas[0]++).
                 forEach(System.out::println);
+
+
+
         System.out.println("Linhas contadas = " + contaLinhas[0]);
         br.close();
     }
