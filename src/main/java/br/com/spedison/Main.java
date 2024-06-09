@@ -23,5 +23,7 @@ public class Main {
         _04_CountLinesUsingLines_V3.main(args);
         _04_CountLinesUsingLines_V4.main(args);
 
+        _07_ReadFileUsingStream_V1.main(args);
+
     }
 }
