@@ -16,6 +16,11 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/***
+ * OBS.: 1) This example is based from https://www.baeldung.com/java-groupingby-collector
+ *       2) Do not exists Tuple or Pair in simple jdk. So I used ImmutablePair from apache commons.
+ *       3) If you do not use this lib, make a simple class with all field or record class.
+ */
 public class _07_ReadFileUsingStream_V3 {
     public static void main(String[] args) throws IOException {
 

@@ -20,6 +20,8 @@ import java.util.function.Predicate;
 public class _07_ReadFileUsingStream_V1 {
     public static void main(String[] args) throws IOException {
 
+        // https://www.baeldung.com/java-download-file
+        // Exemple for control with downloads files from intenet to localfile.
         // String fileUrl = "https://raw.githubusercontent.com/1920-3ahitm-sew/assigment01-football-league-PhilippEdlinger/master/bundesliga-1819.csv";
         String fileUrl = "https://raw.githubusercontent.com/spedison/FilesToWorkingRemote/main/faker_persons_with_width.csv";
         // Header -> Nome;Idade;Peso;Altura;Cidade
